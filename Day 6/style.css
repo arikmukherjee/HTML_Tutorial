@@ -1,0 +1,165 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Consider whether you really need this */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header styles */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: #008080; /* Teal background color */
+    opacity: 0; /* Set initial opacity to 0 for fade-in animation */
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFF; /* White text color */
+    cursor: pointer;
+    opacity: 0; /* Set initial opacity to 0 for fade-in animation */
+    animation: scaleAndFadeIn 1s 0.5s forwards; /* Scale-up and fade-in animation */
+}
+
+@keyframes scaleAndFadeIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.logo::first-letter {
+    font-size: 40px;
+    border: 2px solid #FFF; /* White border color */
+    border-right: transparent;
+    padding-left: 5px;
+    color: #FFF; /* White text color */
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 10px 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a {
+    position: relative;
+    color: #FFF; /* White text color */
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+nav ul li:hover {
+    transform: translateY(-5px); /* Move the link up slightly on hover */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #FFD700; /* Gold color */
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.btn {
+    color: #008080; /* Teal text color */
+    font-size: 16px;
+    text-transform: uppercase;
+    background: #FFF; /* White background color */
+    padding: 10px 30px;
+    border-radius: 500px;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 0.4s ease-in-out;
+    border: 2px solid #008080; /* Teal border color */
+}
+
+.btn:hover {
+    background: transparent;
+    color: #FFF; /* White text color */
+}
+
+/* Main content styles */
+.detail {
+    position: absolute;
+    top: 35%;
+    left: 8%;
+    opacity: 0; /* Set initial opacity to 0 for fade-in animation */
+    animation: fadeIn 1s 1s forwards; /* Fade-in animation with delay */
+}
+
+.detail h1 {
+    color: #FFF; /* White text color */
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 70px;
+}
+
+.detail h1 span {
+    color: #008080; /* Teal color */
+}
+
+.detail p {
+    color: #FFF; /* White text color */
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+/* Image styles */
+.image {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 145px;
+    right: 80px;
+    opacity: 0; /* Set initial opacity to 0 for fade-in animation */
+    animation: fadeIn 1s 1.5s forwards; /* Fade-in animation with delay */
+}
+
+.image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 500px;
+}
